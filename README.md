@@ -4,7 +4,7 @@
 
 ## My Solution
 
-#### [Demo](http://5dayforecast herokuapp.com)
+#### [Demo](http://fiveday.herokuapp.com)
 
 ## Technology stack
 
@@ -35,7 +35,7 @@ npm test
 
 # Deployment
 ```
-  heroku create 5dayforecast --buildpack https://github.com/mars/create-react-app-buildpack.git
+  heroku create fivedays --buildpack https://github.com/mars/create-react-app-buildpack.git
   git push heroku master
 ```
 

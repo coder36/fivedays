@@ -1,7 +1,9 @@
 {
-  "name": "5dayforecast",
+  "name": "fiveday",
   "version": "0.1.0",
-  "engines": {"node":"6.5.0"},
+  "engines": {
+    "node": "6.5.0"
+  },
   "devDependencies": {
     "enzyme": "^2.4.1",
     "react-addons-test-utils": "^15.3.2",
@@ -10,6 +12,7 @@
     "sinon-stub-promise": "^3.0.1"
   },
   "dependencies": {
+    "moment": "^2.15.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "whatwg-fetch": "^1.0.0"
