@@ -4,12 +4,13 @@
 
 ## My Solution
 
-I developed the app primarily for a mobile phone display, though it looks great on a desktop.  On a desktop you get the added benefit of tooltips.  Hovering over icons, will give you additional information such as the wind direction.
+I developed the app primarily for a mobile phone display, though it looks great on a desktop:  
 
 ### [Demo](http://fivedays.herokuapp.com)
 
 <a href="http://fivedays.herokuapp.com"><img src="https://raw.githubusercontent.com/coder36/5dayforecast/master/public/screenshot.png"/></a>
 
+On a desktop you get the added benefit of tooltips.  Hovering over the wind icon, will give you the wind direction.  Hovering over a weather image will give you a worded description.
 
 ## Technology stack
 
@@ -62,10 +63,13 @@ The openweather api says that the api should only be called every 10 minutes.  M
 The openweather api could be exposed as a graphql end point.  Not really appropriate for this exercise, but for a bigger app I would absolutally consider using GraphQL over REST.
 
 ### Cucumber / BDD
-I would create a set of cucumber tests as I think the gherkin BDD approach better documents the way end users would see and use the system.  It would also allow me to tie business value to my design decisions.  Implementation wise, I would use Ruby/Capybara to write the tests as its a doddle to work with.  [Mirage](https://github.com/lashd/mirage) is a great way to programatically mock REST data.
+I would create a set of cucumber tests as I think the gherkin BDD approach better documents the way end users would see and use the system.  It would also allow me to tie business value to my design decisions.  Implementation wise, I would use Ruby/Capybara to write the tests as its a doddle to work with.  [Mirage](https://github.com/lashd/mirage) is a great way to programatically mock REST endpoints.
 
 ### Enivonment configuration
 I've hard coded the openweather api url into the code.  This could be externalised and injected at deployment time.  create-react-app has a really nice way to allow environment variables to be embedded into the react code.
+
+### Search for location
+A nice feature would be the ability to search for a location.  At the moment its hardcoded to Newcastle.
 
 # Notes
 
