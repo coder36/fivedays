@@ -1,0 +1,11 @@
+{
+  "root": "build/",
+  "headers": {
+    "/static/css/**": {
+      "Cache-Control": "max-age=31536000"
+    },
+    "/static/js/**": {
+      "Cache-Control": "max-age=31536000"
+    }
+  }
+}
