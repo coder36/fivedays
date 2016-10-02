@@ -31,7 +31,7 @@ This will start up the app in development mode.
 Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Testing
-Tesing uses [Jest](https://facebook.github.io/jest/):
+Using [Jest](https://facebook.github.io/jest/):
 
 ```
 CI=true npm test -- --coverage
