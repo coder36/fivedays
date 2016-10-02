@@ -4,13 +4,19 @@
 
 ## My Solution
 
-#### [Demo](http://fiveday.herokuapp.com)
+I developed the app primarily for a mobile phone display, though it looks great on a desktop.  On a desktop you get the added benefit of tooltips.  Hovering over icons, will give you additional information such as the wind direction.
+
+### [Demo](http://fivedays.herokuapp.com)
+
+<a href="http://fivedays.herokuapp.com"><img src="https://raw.githubusercontent.com/coder36/5dayforecast/master/public/screenshot.png"/></a>
+
 
 ## Technology stack
 
 * React
 * [create-react-app](https://github.com/facebookincubator/create-react-app) - this is a real win as it saves on all the webpack configuration and gives a nice development environment with linting, testing and post css processing.
 * Node
+* [OpenWeatherMap 5 day forecast](http://openweathermap.org/forecast5)
 
 ## Building
 Assuming node 6.5.0
@@ -23,6 +29,8 @@ This will start up the app in development mode.
 Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Testing
+Tesing uses [Jest](https://facebook.github.io/jest/):
+
 ```
 CI=true npm test -- --coverage
 ```
@@ -33,7 +41,7 @@ npm test
 ```
 
 
-# Deployment
+## Deployment
 ```
   heroku create fivedays --buildpack https://github.com/mars/create-react-app-buildpack.git
   git push heroku master
@@ -45,7 +53,7 @@ In `static.json` I've set the static assets to be cached in the browser using th
 # If I had more time...
 
 ### Test and code for error conditions
-What would happen if the weatherapi end point was unavailable ?  At the moment you would just get a blank page.  Also JEST (the test framework I used) kind of assumes your react components are pure functions with no side effects.  Given that I've used the ES6 fetch api with Promises, means that I would have to find some other way to test this (I would probably do it as a cucumber with mirage test).
+What would happen if the openweatherapi end point was unavailable ?  At the moment you would just get a blank page.  Also JEST (the test framework I used) kind of assumes your react components are pure functions with no side effects.  Given that I've used the ES6 fetch api with Promises, means that I would have to find some other way to test this (I would probably do it as a cucumber with mirage test).
 
 ### Caching
 The openweather api says that the api should only be called every 10 minutes.  My code does not enforce this.  A really simple/fudge would be to create an express server endpoint which proxies the call to the openweather api adding in a `cache-control` header setting the `max-age` to 10 minutes.  Crude, but it would be an immediate win.      
@@ -61,4 +69,4 @@ I've hard coded the openweather api url into the code.  This could be externalis
 
 # Notes
 
-* I've only tried it on the chrome browser.
+* Only tested on the chrome browser.
