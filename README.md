@@ -30,7 +30,7 @@ npm start
 This will start up the app in development mode.
 Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Testing
+## Testing with Jest
 Using [Jest](https://facebook.github.io/jest/):
 
 ```
@@ -42,6 +42,21 @@ You can launch Jest in watch mode which is great during development:
 npm test
 ```
 
+## Testing with Cucumber
+Assuming ruby 2.2.3 and chromedriver are installed
+
+Start up server in cucumber mode:
+```
+npm run start_in_cucumber_mode
+```
+
+In another shell run cucumber
+
+```
+cd cucumber
+bundle install
+cucumber
+```
 
 ## Deployment
 ```

@@ -3,6 +3,7 @@ import 'whatwg-fetch'
 import './weather_app.css'
 import WeatherPanel from './weather_panel'
 import moment from 'moment'
+import Map from 'es6-map';
 
 export default class extends React.Component {
 
@@ -13,7 +14,7 @@ export default class extends React.Component {
   }
 
   loadWeather() {
-    const url = "http://api.openweathermap.org/data/2.5/forecast?APPID=019a736fd448ec0464f324f3f7063003&units=metric&q=Newcastle,uk&mode=json"
+    const url = process.env.REACT_APP_API ||  "http://api.openweathermap.org/data/2.5/forecast?APPID=019a736fd448ec0464f324f3f7063003&units=metric&q=Newcastle,uk&mode=json"
     fetch(url).then(resp => resp.json()).then((weather) => {
       this.setState({weather})
     })
