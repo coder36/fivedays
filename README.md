@@ -58,6 +58,11 @@ bundle install
 cucumber
 ```
 
+It also supports running in a headless browser. Assummg Phantomjs is installed:
+```
+cucumber browser=phantom
+```
+
 ## Deployment
 ```
   heroku create fivedays --buildpack https://github.com/mars/create-react-app-buildpack.git
