@@ -4,9 +4,6 @@ import ReactDOM from 'react-dom'
 import { mount } from 'enzyme'
 import moment from 'moment'
 import ReactTestUtils from 'react-addons-test-utils'
-import sinonStubPromise from 'sinon-stub-promise'
-import sinon from 'sinon'
-sinonStubPromise(sinon)
 
 describe( '<WeatherApp/>', () => {
 
@@ -29,7 +26,7 @@ describe( '<WeatherApp/>', () => {
                ]
    }
 
-   const dom = mount(<WeatherApp data={testData}/>)
+   const dom = mount(<WeatherApp ready={true} weather={testData}/>)
 
    it( 'displays the city name on the first pannel', () => {
       expect(dom.find("#sunday_2nd_october .city").length).toEqual(1)
@@ -66,7 +63,7 @@ describe( '<WeatherApp/>', () => {
          ]
       }
 
-      const dom = mount(<WeatherApp data={testData}/>)
+      const dom = mount(<WeatherApp ready={true} weather={testData}/>)
 
       it('displays the city name', () => {
          expect(dom.find( ".city").text()).toEqual("Newcastle")
@@ -102,30 +99,4 @@ describe( '<WeatherApp/>', () => {
       })
    })
 
-
-
-   describe('fetch call', () => {
-      let stubedFetch
-
-      beforeEach(() => {
-         stubedFetch = sinon.stub(window, 'fetch')
-      })
-
-      afterEach(() => {
-         window.fetch.restore();
-      })
-
-      function mockApiResponse(body = {}) {
-         return new window.Response(JSON.stringify(body), {
-            status: 200,
-            headers: { 'Content-type': 'application/json' }
-         })
-      }
-
-      it('works without crashing', () => {
-         window.fetch.returns(Promise.resolve(mockApiResponse()));
-         const dom = mount(<WeatherApp />)
-      })
-
-   })
 })

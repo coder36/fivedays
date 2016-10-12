@@ -12,6 +12,7 @@ build
 npm-debug.log
 .idea
 *.iml
+cucumber/mirage.log
 
 
 
